@@ -1,0 +1,27 @@
+{
+  "name": "object-injector",
+  "version": "0.0.1",
+  "description": "Injects some properties of an object into a js ",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/pandres95/object-injector"
+  },
+  "keywords": [
+    "injection",
+    "object",
+    "underscore"
+  ],
+  "author": "Pablo Andrés Dorado Suárez <pandres95@boolinc.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pandres95/object-injector/issues"
+  },
+  "homepage": "https://github.com/pandres95/object-injector",
+  "dependencies": {
+    "underscore": "^1.7.0"
+  }
+}
