@@ -1,27 +1,34 @@
 {
-  "name": "object-injector",
-  "version": "0.0.1",
-  "description": "Injects some properties of an object into a js ",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/pandres95/object-injector"
-  },
-  "keywords": [
-    "injection",
-    "object",
-    "underscore"
-  ],
-  "author": "Pablo Andrés Dorado Suárez <pandres95@boolinc.co>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pandres95/object-injector/issues"
-  },
-  "homepage": "https://github.com/pandres95/object-injector",
-  "dependencies": {
-    "underscore": "^1.7.0"
-  }
+    "name": "object-injector",
+    "version": "0.0.1",
+    "description": "Injects properties from an origin object into another",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha test/index.js",
+        "doc": "rm -rf doc && jsdoc -c jsdoc.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/pandres95/object-injector"
+    },
+    "keywords": [
+        "injection",
+        "object",
+        "underscore"
+    ],
+    "author": {
+        "name": "Pablo Andrés Dorado Suárez",
+        "mail": "pandres95@boolinc.co"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pandres95/object-injector/issues"
+    },
+    "homepage": "https://github.com/pandres95/object-injector",
+    "devDependencies": {
+        "expect.js": "^0.3.1"
+    },
+    "dependencies": {
+        "underscore": "^1.7.0"
+    }
 }

@@ -1,2 +1,3 @@
-# object-injector
-Injects properties from an origin object into another
+# Object Injector
+
+Injects properties from an origin object into another.
