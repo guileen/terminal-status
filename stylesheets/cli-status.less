@@ -1,0 +1,60 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/stylesheets/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.cli-status {
+  &.panel {
+    margin-bottom: 0px;
+    white-space: pre;
+    word-wrap: break-word;
+    font-size: 14px;
+    font-family: monospace;
+  }
+  .panel-heading {
+    // margin: 1px;
+    padding: 2px;
+    text-align: right;
+    .btn {
+      top: 0px;
+    }
+  }
+  .terminal {
+    // let's keep this as a fallback
+    max-height: 300px;
+    overflow-y: scroll;
+    bottom: @component-padding;
+
+    .file-info {
+      width: 140px;
+      display: inline-block;
+      // height: 2.5em;
+      float: left;
+    }
+    .stat-program {
+      color: #26c26a;
+    }
+    .stat-link {
+      color: hsl(285, 0.7, 0.7);
+    }
+    .clear {
+      clear: both;
+    }
+  }
+  .status-ignored {
+    opacity: 0.5;
+  }
+  .status-running {
+    color: hsl(180, 1, 0.5);
+  }
+  .status-info {
+    color: hsl(220, 1, 0.5);
+  }
+  .status-success {
+    color: hsl(100, 1, 0.5);
+  }
+  .status-error {
+    color: hsl(0, 1, 0.5);
+  }
+}
