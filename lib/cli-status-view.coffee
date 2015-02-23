@@ -12,6 +12,7 @@ class CliStatusView extends View
   commandViews: []
   activeIndex: 0
   initialize: (serializeState) ->
+
     atom.commands.add 'atom-workspace', 'terminal-status:new', -> @newTermClick()
     atom.commands.add 'atom-workspace', 'terminal-status:toggle', -> @toggle()
     atom.commands.add 'atom-workspace', 'terminal-status:next', -> @activeNextCommandView()
@@ -52,6 +53,7 @@ class CliStatusView extends View
 
   newTermClick: ()->
     @createCommandView().toggle()
+
 
   attach: (statusBar) ->
     statusBar = document.querySelector("status-bar")

@@ -33,6 +33,7 @@ class CommandOutputView extends View
     @subscribe atom.config.observe 'terminal-status.WindowHeight', => @adjustWindowHeight()
 
     @userHome = process.env.HOME or process.env.HOMEPATH or process.env.USERPROFILE;
+
     atom.commands.add 'atom-workspace', "cli-status:toggle-output", -> @toggle()
 
     @on "core:confirm", =>
@@ -92,7 +93,9 @@ class CommandOutputView extends View
 
   open: ->
     @lastLocation = atom.workspace.getActivePane()
+
     atom.workspace.addBottomPanel(item: this) unless @hasParent()
+
     if lastOpenedView and lastOpenedView != this
       lastOpenedView.close()
     lastOpenedView = this
@@ -112,6 +115,7 @@ class CommandOutputView extends View
       @open()
 
   cd: (args)->
+    args = [atom.project.path] if not args[0]
     dir = resolve @getCwd(), args[0]
     fs.stat dir, (err, stat) =>
       if err
