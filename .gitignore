@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 .DS_Store
 lib-cov
 *.seed
@@ -16,10 +13,4 @@ logs
 results
 
 npm-debug.log
->>>>>>> c48ff51f13be206596411b30e44dc656f9e6e7b5
 node_modules
-=======
-node_modules
-*.log
-*.DS_Store
->>>>>>> 0d25b9912a5ddba59ab1426b35b7d2ac706f3111
