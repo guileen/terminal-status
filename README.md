@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 terminal-status
 ===============
 
@@ -39,3 +40,8 @@ Fancy ls.
 * 1.3.2
   * fix PATH of /usr/local/bin
   * support ~
+=======
+# Object Injector
+
+Injects properties from an origin object into another.
+>>>>>>> 0d25b9912a5ddba59ab1426b35b7d2ac706f3111
