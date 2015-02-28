@@ -1,1 +1,19 @@
+<<<<<<< HEAD
+=======
+.DS_Store
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+>>>>>>> c48ff51f13be206596411b30e44dc656f9e6e7b5
 node_modules

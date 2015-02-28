@@ -33,11 +33,12 @@ class CommandOutputView extends View
     @subscribe atom.config.observe 'terminal-status.WindowHeight', => @adjustWindowHeight()
 
     @userHome = process.env.HOME or process.env.HOMEPATH or process.env.USERPROFILE;
+
     cmd = 'test -e /etc/profile && source /etc/profile;test -e ~/.profile && source ~/.profile; node -pe "JSON.stringify(process.env)"'
     exec cmd, (code, stdout, stderr) ->
       process.env = JSON.parse(stdout)
-    atom.workspaceView.command "cli-status:toggle-output", =>
-      @toggle()
+
+    atom.commands.add 'atom-workspace', "cli-status:toggle-output", -> @toggle()
 
     @on "core:confirm", =>
       inputCmd = @cmdEditor.getEditor().getText()
@@ -55,7 +56,6 @@ class CommandOutputView extends View
       if cmd == 'ls'
         return @ls args
       @spawn inputCmd, cmd, args
-
 
   adjustWindowHeight: ->
     maxHeight = atom.config.get('terminal-status.WindowHeight')
@@ -97,7 +97,9 @@ class CommandOutputView extends View
 
   open: ->
     @lastLocation = atom.workspace.getActivePane()
-    atom.workspaceView.prependToBottom(this) unless @hasParent()
+
+    atom.workspace.addBottomPanel(item: this) unless @hasParent()
+
     if lastOpenedView and lastOpenedView != this
       lastOpenedView.close()
     lastOpenedView = this
@@ -117,6 +119,7 @@ class CommandOutputView extends View
       @open()
 
   cd: (args)->
+    args = [atom.project.path] if not args[0]
     dir = resolve @getCwd(), args[0]
     fs.stat dir, (err, stat) =>
       if err

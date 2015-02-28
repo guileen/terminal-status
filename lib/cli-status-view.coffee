@@ -12,10 +12,12 @@ class CliStatusView extends View
   commandViews: []
   activeIndex: 0
   initialize: (serializeState) ->
-    atom.workspaceView.command 'terminal-status:new', => @newTermClick()
-    atom.workspaceView.command 'terminal-status:toggle', => @toggle()
-    atom.workspaceView.command 'terminal-status:next', => @activeNextCommandView()
-    atom.workspaceView.command 'terminal-status:prev', => @activePrevCommandView()
+
+    atom.commands.add 'atom-workspace', 'terminal-status:new', -> @newTermClick()
+    atom.commands.add 'atom-workspace', 'terminal-status:toggle', -> @toggle()
+    atom.commands.add 'atom-workspace', 'terminal-status:next', -> @activeNextCommandView()
+    atom.commands.add 'atom-workspace', 'terminal-status:prev', -> @activePrevCommandView()
+
     @createCommandView()
     @attach()
 
@@ -53,8 +55,11 @@ class CliStatusView extends View
   newTermClick: ()->
     @createCommandView().toggle()
 
-  attach: ->
-    atom.workspaceView.statusBar.appendLeft(this)
+  attach: (statusBar) ->
+    statusBar = document.querySelector("status-bar")
+    if statusBar?
+      @statusBarTile = statusBar.addLeftTile(item: this, priority: 100)
+
   # Returns an object that can be retrieved when package is activated
   # serialize: ->
 
