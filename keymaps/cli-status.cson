@@ -7,7 +7,8 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.workspace':
+
+'.atom-workspace':
   'shift-enter': 'terminal-status:toggle'
   'cmd-shift-t': 'terminal-status:new'
   'cmd-shift-j': 'terminal-status:next'

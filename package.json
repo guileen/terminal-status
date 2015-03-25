@@ -1,16 +1,166 @@
 {
-  "name": "terminal-status",
-  "main": "./lib/cli-status",
-  "version": "1.3.5",
-  "description": "A terminal interface and status icon",
-  "repository": "https://github.com/guileen/terminal-status",
-  "license": "MIT",
-  "engines": {
-    "atom": ">0.50.0"
-  },
-  "dependencies": {
-    "ansi-html-stream": "0.0.3",
-    "domify": "~1.2.2",
-    "domutil": "~0.2.1"
-  }
+    "name": "terminal-status",
+    "main": "./lib/cli-status",
+    "version": "1.3.5",
+    "description": "A terminal interface and status icon",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guileen/terminal-status"
+    },
+    "license": "MIT",
+    "engines": {
+        "atom": ">0.50.0"
+    },
+    "dependencies": {
+        "ansi-html-stream": "0.0.3",
+        "domify": "~1.2.2",
+        "domutil": "~0.2.1"
+    },
+    "readme": "terminal-status\n===============\n\n## Usage\nJust press `shift-enter`\n\n## Screenshot\n\nOpen multiple terminal.\n\n![A screenshot of terminal-status package](http://guileen.github.io/img/terminal-status/screenshot-1.1.0.gif)\n\nFancy ls.\n\n![A screenshot of terminal-status package](http://guileen.github.io/img/terminal-status/screenshot-ls.gif)\n\n## Feature\n\n* multiple terminal\n* colorful status icon\n* kill long live process\n* fancy ls\n\n## Hotkeys\n\n* `shift-enter` toggle current terminal\n* `command-shift-t` new terminal\n* `command-shift-j` next terminal\n* `command-shift-k` prev terminal\n\n## Changelog\n\n* 1.3.4\n  * use `child_process.exec` instead of `child_process.spawn`, support pipe like command\n\n* 1.3.3\n  * source ~/.profile and /etc/profile for environment variables.\n\n* 1.3.2\n  * fix PATH of /usr/local/bin\n  * support ~\n",
+    "readmeFilename": "README.md",
+    "bugs": {
+        "url": "https://github.com/guileen/terminal-status/issues"
+    },
+    "homepage": "https://github.com/guileen/terminal-status",
+    "_id": "terminal-status@1.3.5",
+    "_shasum": "4da56dd6714a144541a6917f8f583f96f4c0f172",
+    "_resolved": "file:../d-115119-1527-1u1mg4i/package.tgz",
+    "_from": "../d-115119-1527-1u1mg4i/package.tgz",
+    "_atomModuleCache": {
+        "version": 1,
+        "dependencies": [
+            {
+                "name": "ansi-html-stream",
+                "version": "0.0.3",
+                "path": "node_modules/ansi-html-stream/index.js"
+            },
+            {
+                "name": "clone",
+                "version": "0.1.6",
+                "path": "node_modules/ansi-html-stream/node_modules/clone/clone.js"
+            },
+            {
+                "name": "escape-html",
+                "version": "0.0.1",
+                "path": "node_modules/ansi-html-stream/node_modules/escape-html/index.js"
+            },
+            {
+                "name": "map-stream",
+                "version": "0.0.5",
+                "path": "node_modules/ansi-html-stream/node_modules/map-stream/index.js"
+            },
+            {
+                "name": "special-html",
+                "version": "0.0.1",
+                "path": "node_modules/ansi-html-stream/node_modules/special-html/index.js"
+            },
+            {
+                "name": "split",
+                "version": "0.1.2",
+                "path": "node_modules/ansi-html-stream/node_modules/split/index.js"
+            },
+            {
+                "name": "through",
+                "version": "1.1.2",
+                "path": "node_modules/ansi-html-stream/node_modules/split/node_modules/through/index.js"
+            },
+            {
+                "name": "xtend",
+                "version": "1.0.3",
+                "path": "node_modules/ansi-html-stream/node_modules/xtend/index.js"
+            },
+            {
+                "name": "domify",
+                "version": "1.2.2",
+                "path": "node_modules/domify/index.js"
+            },
+            {
+                "name": "domutil",
+                "version": "0.2.1",
+                "path": "node_modules/domutil/index.js"
+            }
+        ],
+        "extensions": {
+            ".coffee": [
+                "lib/cli-status-view.coffee",
+                "lib/cli-status.coffee",
+                "lib/command-output-view.coffee"
+            ],
+            ".js": [
+                "node_modules/ansi-html-stream/colors.js",
+                "node_modules/ansi-html-stream/index.js",
+                "node_modules/ansi-html-stream/node_modules/clone/clone.js",
+                "node_modules/ansi-html-stream/node_modules/clone/clonePrototype.js",
+                "node_modules/ansi-html-stream/node_modules/clone/test.js",
+                "node_modules/ansi-html-stream/node_modules/escape-html/index.js",
+                "node_modules/ansi-html-stream/node_modules/map-stream/examples/pretty.js",
+                "node_modules/ansi-html-stream/node_modules/map-stream/index.js",
+                "node_modules/ansi-html-stream/node_modules/special-html/index.js",
+                "node_modules/ansi-html-stream/node_modules/split/examples/pretty.js",
+                "node_modules/ansi-html-stream/node_modules/split/index.js",
+                "node_modules/ansi-html-stream/node_modules/split/node_modules/through/index.js",
+                "node_modules/ansi-html-stream/node_modules/xtend/browser/index.js",
+                "node_modules/ansi-html-stream/node_modules/xtend/index.js",
+                "node_modules/ansi-html-stream/node_modules/xtend/support/compile.js",
+                "node_modules/ansi-html-stream/test.js",
+                "node_modules/domify/index.js",
+                "node_modules/domutil/impl/classes-classlist.js",
+                "node_modules/domutil/impl/classes-string.js",
+                "node_modules/domutil/index.js"
+            ],
+            ".json": [
+                "node_modules/ansi-html-stream/node_modules/clone/package.json",
+                "node_modules/ansi-html-stream/node_modules/escape-html/component.json",
+                "node_modules/ansi-html-stream/node_modules/escape-html/package.json",
+                "node_modules/ansi-html-stream/node_modules/map-stream/package.json",
+                "node_modules/ansi-html-stream/node_modules/special-html/component.json",
+                "node_modules/ansi-html-stream/node_modules/special-html/package.json",
+                "node_modules/ansi-html-stream/node_modules/split/node_modules/through/package.json",
+                "node_modules/ansi-html-stream/node_modules/split/package.json",
+                "node_modules/ansi-html-stream/node_modules/xtend/package.json",
+                "node_modules/ansi-html-stream/package.json",
+                "node_modules/domify/component.json",
+                "node_modules/domify/package.json",
+                "node_modules/domutil/package.json",
+                "package.json"
+            ]
+        },
+        "folders": [
+            {
+                "paths": [
+                    "lib",
+                    "",
+                    "spec"
+                ],
+                "dependencies": {
+                    "ansi-html-stream": "0.0.3",
+                    "domify": "~1.2.2",
+                    "domutil": "~0.2.1"
+                }
+            },
+            {
+                "paths": [
+                    "node_modules/ansi-html-stream"
+                ],
+                "dependencies": {
+                    "map-stream": "~0.0.1",
+                    "escape-html": "0.0.1",
+                    "special-html": "0.0.1",
+                    "xtend": "~1.0.3",
+                    "split": "~0.1.0",
+                    "clone": "0.1.6"
+                }
+            },
+            {
+                "paths": [
+                    "node_modules/ansi-html-stream/node_modules/split/examples",
+                    "node_modules/ansi-html-stream/node_modules/split",
+                    "node_modules/ansi-html-stream/node_modules/split/test"
+                ],
+                "dependencies": {
+                    "through": "1"
+                }
+            }
+        ]
+    }
 }
