@@ -138,7 +138,10 @@ class CommandOutputView extends View
     files = fs.readdirSync @getCwd()
     filesBlocks = []
     files.forEach (filename) =>
-      filesBlocks.push @_fileInfoHtml(filename, @getCwd())
+      try
+        filesBlocks.push @_fileInfoHtml(filename, @getCwd())
+      catch
+        console.log "#{filename} couln't be read"
     filesBlocks = filesBlocks.sort (a, b)->
       aDir = a[1].isDirectory()
       bDir = b[1].isDirectory()
