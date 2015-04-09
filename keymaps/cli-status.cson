@@ -10,6 +10,6 @@
 
 '.atom-workspace':
   'shift-enter': 'terminal-status:toggle'
-  'cmd-shift-t': 'terminal-status:new'
+  'cmd-shift-g': 'terminal-status:new'
   'cmd-shift-j': 'terminal-status:next'
   'cmd-shift-k': 'terminal-status:prev'
