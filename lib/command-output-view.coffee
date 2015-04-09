@@ -65,7 +65,7 @@ class CommandOutputView extends View
 
   showCmd: ->
     @cmdEditor.show()
-    @cmdEditor.getEditor().selectAll()
+    @cmdEditor.getModel().selectAll()
     @cmdEditor.focus()
     @scrollToBottom()
 
