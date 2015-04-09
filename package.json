@@ -1,7 +1,7 @@
 {
   "name": "terminal-status",
   "main": "./lib/cli-status",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "A terminal interface and status icon",
   "repository": {
     "type": "git",
