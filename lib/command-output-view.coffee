@@ -1,4 +1,5 @@
-{View, EditorView} = require 'atom'
+{TextEditorView} = require 'atom-space-pen-views'
+{View} = require 'atom'
 {spawn, exec} = require 'child_process'
 ansihtml = require 'ansi-html-stream'
 readline = require 'readline'
@@ -27,7 +28,7 @@ class CommandOutputView extends View
       @div class: 'cli-panel-body', =>
         @pre class: "terminal", outlet: "cliOutput",
           "Welcome to terminal status. http://github.com/guileen/terminal-status"
-        @subview 'cmdEditor', new EditorView(mini: true, placeholderText: 'input your command here')
+        @subview 'cmdEditor', new TextEditorView(mini: true, placeholderText: 'input your command here')
 
   initialize: ->
     @subscribe atom.config.observe 'terminal-status.WindowHeight', => @adjustWindowHeight()
@@ -41,7 +42,8 @@ class CommandOutputView extends View
     atom.commands.add 'atom-workspace', "cli-status:toggle-output", -> @toggle()
 
     @on "core:confirm", =>
-      inputCmd = @cmdEditor.getEditor().getText()
+      inputCmd = @cmdEditor.getModel().getText()
+
       @cliOutput.append "\n$>#{inputCmd}\n"
       @scrollToBottom()
       args = []
