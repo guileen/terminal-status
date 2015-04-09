@@ -37,25 +37,28 @@ class CommandOutputView extends View
     exec cmd, (code, stdout, stderr) ->
       process.env = JSON.parse(stdout)
 
-    atom.commands.add 'atom-workspace', "cli-status:toggle-output", -> @toggle()
+    atom.commands.add 'atom-workspace', "cli-status:toggle-output", => @toggle()
 
-    @on "core:confirm", =>
-      inputCmd = @cmdEditor.getModel().getText()
+    atom.commands.add 'atom-workspace', "core:confirm", => @readLine()
 
-      @cliOutput.append "\n$>#{inputCmd}\n"
-      @scrollToBottom()
-      args = []
-      # support 'a b c' and "foo bar"
-      inputCmd.replace /("[^"]*"|'[^']*'|[^\s'"]+)/g, (s) =>
-        if s[0] != '"' and s[0] != "'"
-          s = s.replace /~/g, @userHome
-        args.push s
-      cmd = args.shift()
-      if cmd == 'cd'
-        return @cd args
-      if cmd == 'ls'
-        return @ls args
-      @spawn inputCmd, cmd, args
+
+  readLine: ->
+    inputCmd = @cmdEditor.getModel().getText()
+
+    @cliOutput.append "\n$>#{inputCmd}\n"
+    @scrollToBottom()
+    args = []
+    # support 'a b c' and "foo bar"
+    inputCmd.replace /("[^"]*"|'[^']*'|[^\s'"]+)/g, (s) =>
+      if s[0] != '"' and s[0] != "'"
+        s = s.replace /~/g, @userHome
+      args.push s
+    cmd = args.shift()
+    if cmd == 'cd'
+      return @cd args
+    if cmd == 'ls'
+      return @ls args
+    @spawn inputCmd, cmd, args
 
   adjustWindowHeight: ->
     maxHeight = atom.config.get('terminal-status.WindowHeight')
