@@ -1,5 +1,5 @@
 {TextEditorView} = require 'atom-space-pen-views'
-{View} = require 'atom'
+{View} = require 'atom-space-pen-views'
 {spawn, exec} = require 'child_process'
 ansihtml = require 'ansi-html-stream'
 readline = require 'readline'
@@ -31,8 +31,6 @@ class CommandOutputView extends View
         @subview 'cmdEditor', new TextEditorView(mini: true, placeholderText: 'input your command here')
 
   initialize: ->
-    @subscribe atom.config.observe 'terminal-status.WindowHeight', => @adjustWindowHeight()
-
     @userHome = process.env.HOME or process.env.HOMEPATH or process.env.USERPROFILE;
 
     cmd = 'test -e /etc/profile && source /etc/profile;test -e ~/.profile && source ~/.profile; node -pe "JSON.stringify(process.env)"'
