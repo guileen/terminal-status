@@ -24,7 +24,7 @@ Fancy ls.
 ## Hotkeys
 
 * `shift-enter` toggle current terminal
-* `command-shift-t` new terminal
+* `command-shift-e` new terminal
 * `command-shift-j` next terminal
 * `command-shift-k` prev terminal
 
