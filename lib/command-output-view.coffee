@@ -33,9 +33,34 @@ class CommandOutputView extends View
   initialize: ->
     @userHome = process.env.HOME or process.env.HOMEPATH or process.env.USERPROFILE;
 
-    cmd = 'test -e /etc/profile && source /etc/profile;test -e ~/.profile && source ~/.profile; node -pe "JSON.stringify(process.env)"'
-    exec cmd, (code, stdout, stderr) ->
-      process.env = JSON.parse(stdout)
+    assigned = false
+
+    cmd = [
+        [
+            'test -e /etc/profile && source /etc/profile',
+            'test -e ~/.profile && source ~/.profile',
+            [
+                'node -pe "JSON.stringify(process.env)"',
+                'nodejs -pe "JSON.stringify(process.env)"',
+                'iojs -pe "JSON.stringify(process.env)"'
+            ].join("||")
+        ].join(";"),
+        'node -pe "JSON.stringify(process.env)"',
+        'nodejs -pe "JSON.stringify(process.env)"',
+        'iojs -pe "JSON.stringify(process.env)"'
+    ]
+
+    for command in cmd
+      do(command) ->
+        if not assigned
+          exec command, (code, stdout, stderr) ->
+            if not assigned and not stderr
+              try
+                process.env = JSON.parse(stdout)
+                assigned = true
+              catch
+                console.log "#{command} couldn't be loaded"
+
 
     atom.commands.add 'atom-workspace', "cli-status:toggle-output", => @toggle()
 
