@@ -7,14 +7,10 @@ module.exports =
     createStatusEntry = =>
       @cliStatusView = new CliStatusView(state.cliStatusViewState)
 
-    atom.packages.once 'activated', ->
-      createStatusEntry()
+    atom.packages.onDidActivateInitialPackages => createStatusEntry()
 
   deactivate: ->
     @cliStatusView.destroy()
-
-  # serialize: ->
-  #   cliStatusViewState: @cliStatusView.serialize()
 
   configDefaults:
     'WindowHeight': 300
