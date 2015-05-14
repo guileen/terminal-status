@@ -1,16 +1,15 @@
 CliStatusView = require './cli-status-view'
 
 module.exports =
-  cliStatusView: null
+    cliStatusView: null
 
-  activate: (state) ->
-    createStatusEntry = =>
-      @cliStatusView = new CliStatusView(state.cliStatusViewState)
+    activate: (state) ->
+        createStatusEntry = =>
+            @cliStatusView = new CliStatusView(state.cliStatusViewState)
+        atom.packages.onDidActivateInitialPackages => createStatusEntry()
 
-    atom.packages.onDidActivateInitialPackages => createStatusEntry()
+    deactivate: ->
+        @cliStatusView.destroy()
 
-  deactivate: ->
-    @cliStatusView.destroy()
-
-  configDefaults:
-    'WindowHeight': 300
+    config:
+        'WindowHeight': 300

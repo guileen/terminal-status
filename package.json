@@ -1,26 +1,24 @@
 {
-  "name": "terminal-status",
-  "main": "./lib/cli-status",
-  "version": "1.6.6",
-  "description": "A terminal interface and status icon",
-  "readme": "terminal-status\n===============\n\n## Usage\nJust press `shift-enter`\n\n## Screenshot\n\nOpen multiple terminal.\n\n![A screenshot of terminal-status package](http://guileen.github.io/img/terminal-status/screenshot-1.1.0.gif)\n\nFancy ls.\n\n![A screenshot of terminal-status package](http://guileen.github.io/img/terminal-status/screenshot-ls.gif)\n\n## Feature\n\n* multiple terminal\n* colorful status icon\n* kill long live process\n* fancy ls\n\n## Hotkeys\n\n* `shift-enter` toggle current terminal\n* `command-shift-t` new terminal\n* `command-shift-j` next terminal\n* `command-shift-k` prev terminal\n\n## Changelog\n\n* 1.3.4\n  * use `child_process.exec` instead of `child_process.spawn`, support pipe like command\n\n* 1.3.3\n  * source ~/.profile and /etc/profile for environment variables.\n\n* 1.3.2\n  * fix PATH of /usr/local/bin\n  * support ~\n",
-  "readmeFilename": "README.md",
-  "homepage": "https://github.com/guileen/terminal-status",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/guileen/terminal-status"
-  },
-  "bugs": {
-    "url": "https://github.com/guileen/terminal-status/issues"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "ansi-html-stream": "^0.0.3",
-    "domify": "^1.2.2",
-    "domutil": "^0.2.1",
-    "atom-space-pen-views": "^2.0.5"
-  },
-  "engines": {
-    "atom": ">0.50.0"
-  }
+    "name": "terminal-status",
+    "main": "./lib/cli-status",
+    "version": "1.6.6",
+    "description": "A terminal interface and status icon",
+    "homepage": "https://github.com/guileen/terminal-status",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guileen/terminal-status"
+    },
+    "bugs": {
+        "url": "https://github.com/guileen/terminal-status/issues"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "ansi-html-stream": "^0.0.3",
+        "domify": "^1.2.2",
+        "domutil": "^0.2.1",
+        "atom-space-pen-views": "^2.0.5"
+    },
+    "engines": {
+        "atom": ">0.50.0"
+    }
 }

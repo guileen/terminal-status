@@ -61,11 +61,8 @@ class CommandOutputView extends View
               catch
                 console.log "#{command} couldn't be loaded"
 
-
     atom.commands.add 'atom-workspace', "cli-status:toggle-output", => @toggle()
-
     atom.commands.add 'atom-workspace', "core:confirm", => @readLine()
-
 
   readLine: ->
     inputCmd = @cmdEditor.getModel().getText()
