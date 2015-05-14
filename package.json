@@ -1,24 +1,24 @@
 {
-    "name": "terminal-status",
-    "main": "./lib/cli-status",
-    "version": "1.6.6",
-    "description": "A terminal interface and status icon",
-    "homepage": "https://github.com/guileen/terminal-status",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/guileen/terminal-status"
-    },
-    "bugs": {
-        "url": "https://github.com/guileen/terminal-status/issues"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "ansi-html-stream": "^0.0.3",
-        "domify": "^1.2.2",
-        "domutil": "^0.2.1",
-        "atom-space-pen-views": "^2.0.5"
-    },
-    "engines": {
-        "atom": ">0.50.0"
-    }
+  "name": "terminal-status",
+  "main": "./lib/cli-status",
+  "version": "1.6.7",
+  "description": "A terminal interface and status icon",
+  "homepage": "https://github.com/guileen/terminal-status",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guileen/terminal-status"
+  },
+  "bugs": {
+    "url": "https://github.com/guileen/terminal-status/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "ansi-html-stream": "^0.0.3",
+    "domify": "^1.2.2",
+    "domutil": "^0.2.1",
+    "atom-space-pen-views": "^2.0.5"
+  },
+  "engines": {
+    "atom": ">0.50.0"
+  }
 }
