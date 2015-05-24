@@ -72,4 +72,8 @@ class CliStatusView extends View
     @commandSubscription.dispose()
 
   toggle: ->
-    @commandViews[@activeIndex] and @commandViews[@activeIndex].toggle()
+    if @commandViews[@activeIndex]
+      @commandViews[@activeIndex].toggle()
+    else
+      @newTermClick()
+    
