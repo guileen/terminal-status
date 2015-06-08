@@ -13,7 +13,7 @@ class CliStatusView extends View
   activeIndex: 0
   initialize: (serializeState) ->
 
-    @commandSubscription = atom.commands.add 'atom-workspace',
+    atom.commands.add 'atom-workspace',
         'terminal-status:new': => @newTermClick()
         'terminal-status:toggle': => @toggle()
         'terminal-status:next': => @activeNextCommandView()
@@ -69,11 +69,9 @@ class CliStatusView extends View
     for index in [@commandViews.length .. 0]
       @removeCommandView @commandViews[index]
     @detach()
-    @commandSubscription.dispose()
 
   toggle: ->
     if @commandViews[@activeIndex]
       @commandViews[@activeIndex].toggle()
     else
       @newTermClick()
-    
