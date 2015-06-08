@@ -1,7 +1,7 @@
 {
   "name": "terminal-status",
   "main": "./lib/cli-status",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "description": "A terminal interface and status icon",
   "homepage": "https://github.com/guileen/terminal-status",
   "repository": {
